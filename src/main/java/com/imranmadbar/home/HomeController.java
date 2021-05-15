@@ -8,7 +8,8 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String index() {
-		return "Welcome to Docker Spring Boot MySql App !";
+		return "Welcome to Docker Spring Boot MySql App !\n\n"
+				+ " For Book CRUD: http://localhost:8181/book";
 	}
 	
 	@GetMapping("/home")

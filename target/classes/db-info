@@ -1,0 +1,14 @@
+           DB Info
+=====================================
+Database Name:docker_spring_boot_mysql_db
+Username:root
+Password:root
+
+Create Table Script
+---------------------------
+create table book (
+   id bigint not null,
+    name varchar(255),
+    type varchar(255),
+    primary key (id)
+) engine=InnoDB

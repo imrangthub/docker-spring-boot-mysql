@@ -18,25 +18,52 @@ public class BookRepository {
 	private EntityManager entityManager;
 	
 	
-	public BookEntity findById(Long id) {
+	public String findById(Long id) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<BookEntity> criteria = builder.createQuery( BookEntity.class );
         Root<BookEntity> root = criteria.from(BookEntity.class);
         criteria.select(root).where(
                 builder.equal(root.get("id"), id)
         );
-        return entityManager.createQuery(criteria).getSingleResult();
+        try{
+        	return entityManager.createQuery(criteria).getSingleResult().toString();
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return ex.getMessage();
+        }
+        
+    }
+	
+	public BookEntity findByIdObj(Long id) {
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<BookEntity> criteria = builder.createQuery( BookEntity.class );
+        Root<BookEntity> root = criteria.from(BookEntity.class);
+        criteria.select(root).where(
+                builder.equal(root.get("id"), id)
+        );
+        try{
+        	return entityManager.createQuery(criteria).getSingleResult();
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return null;
+        }
+        
     }
 	
 	
-	public BookEntity findByName(String name) {
+	public String findByName(String name) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<BookEntity> criteria = builder.createQuery( BookEntity.class );
         Root<BookEntity> root = criteria.from(BookEntity.class);
         criteria.select(root).where(
                 builder.equal(root.get("name"), name)
         );
-        return entityManager.createQuery(criteria).getSingleResult();
+        try{
+            return entityManager.createQuery(criteria).getSingleResult().toString();
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return ex.getMessage();
+        }
     }
 	
 

@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.imranmadbar</groupId>
 	<artifactId>docker-spring-boot-mysql</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1.RELEASE</version>
 	<name>docker-spring-boot-mysql</name>
 	<description>Simple Docker Image creation project with Spring Boot and MySql </description>
 	<parent>
